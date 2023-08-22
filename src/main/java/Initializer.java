@@ -10,9 +10,11 @@ import java.util.Map;
 
 public class Initializer {
 
-    static Quartet<String, BigDecimal, BigDecimal, Map<String, CalculationStrategy>> initialize() {
+    // введенная команда, [arg1 или result (после вычисления), arg2], команда выхода, набор операций
+    static Quartet<String, BigDecimal[], String, Map<String, CalculationStrategy>> initialize() {
+        String END_COMMAND = "/end";
 
-        return new Quartet<>(null, null, null,
+        return new Quartet<>(null, null, END_COMMAND,
                 Map.of(
                 "+", new AdditionStrategy(),
                 "-", new SubstractionStrategy(),

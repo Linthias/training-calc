@@ -11,36 +11,39 @@ import java.util.Scanner;
 public class InputHandler implements BaseHandler {
     private static InputHandler inputHandler;
     private final Scanner scanner;
-    private final String endLabel;
 
-    private InputHandler(String endLabel) {
+    private InputHandler() {
         this.scanner = new Scanner(System.in);
-        this.endLabel = endLabel;
     }
 
-    public static InputHandler getInstance(String endLabel) {
+    public static InputHandler getInstance() {
         if (inputHandler == null) {
-            inputHandler = new InputHandler(endLabel);
+            inputHandler = new InputHandler();
         }
+
         return inputHandler;
     }
 
     @Override
-    public Quartet<String, BigDecimal, BigDecimal, Map<String, CalculationStrategy>>
-    process(Quartet<String, BigDecimal, BigDecimal, Map<String, CalculationStrategy>> state) {
+    public Quartet<String, BigDecimal[], String, Map<String, CalculationStrategy>>
+    handle(Quartet<String, BigDecimal[], String, Map<String, CalculationStrategy>> state) {
 
         String[] command = scanner.nextLine().split(" ");
+        String endCommand = state.getValue2();
 
         switch (command.length) {
             case 1:
-                if (command[0].equals(endLabel)) {
+                if (command[0].equals(endCommand)) {
                     state = state.setAt0(command[0]);
+                } else {
+                    throw new RuntimeException("wrong operation; expected to be: /end");
                 }
                 break;
             case 3:
                 state = state.setAt0(command[1]);
-                state = state.setAt1(new BigDecimal(command[0]));
-                state = state.setAt2(new BigDecimal(command[2]));
+
+                BigDecimal[] arguments = {new BigDecimal(command[0]), new BigDecimal(command[2])};
+                state = state.setAt1(arguments);
                 break;
             default:
                 throw new RuntimeException("wrong number of arguments");

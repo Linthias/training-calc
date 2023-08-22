@@ -8,6 +8,6 @@ import java.math.BigDecimal;
 import java.util.Map;
 
 public interface BaseHandler {
-    Quartet<String, BigDecimal, BigDecimal, Map<String, CalculationStrategy>>
-    process(Quartet<String, BigDecimal, BigDecimal, Map<String, CalculationStrategy>> state);
+    Quartet<String, BigDecimal[], String, Map<String, CalculationStrategy>>
+    handle(Quartet<String, BigDecimal[], String, Map<String, CalculationStrategy>> state);
 }

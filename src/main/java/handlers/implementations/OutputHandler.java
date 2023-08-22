@@ -9,32 +9,37 @@ import java.util.Map;
 
 public class OutputHandler implements BaseHandler {
     private static OutputHandler outputHandler;
-    private final String endLabel;
+    private final static String SEMICOLON_DELIMITER = ";";
 
-    private OutputHandler(String endLabel) {
-        this.endLabel = endLabel;
+    private OutputHandler() {
     }
 
-    public static OutputHandler getInstance(String endLabel) {
+    public static OutputHandler getInstance() {
         if (outputHandler == null) {
-            outputHandler = new OutputHandler(endLabel);
+            outputHandler = new OutputHandler();
         }
+
         return outputHandler;
     }
 
     @Override
-    public Quartet<String, BigDecimal, BigDecimal, Map<String, CalculationStrategy>>
-    process(Quartet<String, BigDecimal, BigDecimal, Map<String, CalculationStrategy>> state) {
+    public Quartet<String, BigDecimal[], String, Map<String, CalculationStrategy>>
+    handle(Quartet<String, BigDecimal[], String, Map<String, CalculationStrategy>> state) {
 
-        String[] commands = state.getValue0().split(";");
+        String[] commands = state.getValue0().split(SEMICOLON_DELIMITER);
+        String endCommand = state.getValue2();
 
-        if (commands[0].equals(endLabel)) {
+        // если в начале есть команда выхода,
+        // то в этот момент в массиве также хранится и вся история запросов
+        if (commands[0].equals(endCommand)) {
             for (int i = 1; i < commands.length; i++) {
                 System.out.println(commands[i]);
             }
-            state = state.setAt0(endLabel);
+            // после печати истории,
+            // надо передать команду на выход в основной цикл
+            state = state.setAt0(endCommand);
         } else {
-            System.out.println(state.getValue1());
+            System.out.println(state.getValue1()[0]);
         }
 
         return state;

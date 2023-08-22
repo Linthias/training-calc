@@ -7,22 +7,19 @@ import strategies.CalculationStrategy;
 
 import java.math.BigDecimal;
 import java.util.Map;
+import java.util.function.Function;
 
 public class Calculator {
     public static void main(String[] args) {
 
-        Quartet<String, BigDecimal, BigDecimal, Map<String, CalculationStrategy>>
+        // введенная команда, [arg1 или result (после вычисления), arg2], команда выхода, набор операций
+        Quartet<String, BigDecimal[], String, Map<String, CalculationStrategy>>
                 state = Initializer.initialize();
 
-        String END_LABEL = "/end";
+        while (true) {
+            state = LifecycleWrapper.getInstance().performLifecycleStep(state);
 
-        while(true) {
-            state = OutputHandler.getInstance(END_LABEL).process(
-                    CalculationHandlerProxy.getInstance(END_LABEL).process(
-                            ValidationHandler.getInstance(END_LABEL).process(
-                                    InputHandler.getInstance(END_LABEL).process(state))));
-
-            if (state.getValue0().equals(END_LABEL)) {
+            if (state.getValue0().equals(state.getValue2())) {
                 break;
             }
         }

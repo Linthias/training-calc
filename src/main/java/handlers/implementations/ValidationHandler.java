@@ -9,27 +9,27 @@ import java.util.Map;
 
 public class ValidationHandler implements BaseHandler {
     private static ValidationHandler validationHandler;
-    private final String endLabel;
 
-    private ValidationHandler(String endLabel) {
-        this.endLabel = endLabel;
+    private ValidationHandler() {
     }
 
-    public static ValidationHandler getInstance(String endLabel) {
+    public static ValidationHandler getInstance() {
         if (validationHandler == null) {
-            validationHandler = new ValidationHandler(endLabel);
+            validationHandler = new ValidationHandler();
         }
+
         return validationHandler;
     }
     @Override
-    public Quartet<String, BigDecimal, BigDecimal, Map<String, CalculationStrategy>>
-    process(Quartet<String, BigDecimal, BigDecimal, Map<String, CalculationStrategy>> state) {
+    public Quartet<String, BigDecimal[], String, Map<String, CalculationStrategy>>
+    handle(Quartet<String, BigDecimal[], String, Map<String, CalculationStrategy>> state) {
 
         String command = state.getValue0();
-        BigDecimal argTwo = state.getValue2();
+        String endCommand = state.getValue2();
+        BigDecimal argTwo = state.getValue1()[1];
         Map<String, CalculationStrategy> strategies = state.getValue3();
 
-        if (!command.equals(endLabel)) {
+        if (!command.equals(endCommand)) {
             if (strategies.containsKey(command)) {
                 if (command.equals("/")) {
                     if (argTwo.doubleValue() == 0) {

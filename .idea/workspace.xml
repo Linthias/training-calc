@@ -5,29 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a12cab62-1789-46b4-8665-67f05fdc7d2b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Initializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/handlers/BaseHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/handlers/implementations/CalculationHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/handlers/implementations/CalculationHandlerProxy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/handlers/implementations/InputHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/handlers/implementations/OutputHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/handlers/implementations/ValidationHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/strategies/CalculationStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/strategies/implementations/AdditionStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/strategies/implementations/DivisionStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/strategies/implementations/MultiplicationStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/strategies/implementations/SubstractionStrategy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Calculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/handlers/CalculationHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/handlers/OutputHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/input/Arguments.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/input/InputHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/input/NotNullParam.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/operations/Division.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/operations/Operation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/CalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CalculatorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Initializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Initializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/handlers/BaseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/handlers/BaseHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/handlers/implementations/CalculationHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/handlers/implementations/CalculationHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/handlers/implementations/CalculationHandlerProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/handlers/implementations/CalculationHandlerProxy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/handlers/implementations/InputHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/handlers/implementations/InputHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/handlers/implementations/OutputHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/handlers/implementations/OutputHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/handlers/implementations/ValidationHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/handlers/implementations/ValidationHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -86,7 +72,6 @@
     <configuration name="Calculator" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Calculator" />
       <module name="calculator" />
-      <option name="PROGRAM_PARAMETERS" value="-arg1 34 -arg2 2 -operation div" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -103,7 +88,24 @@
       <workItem from="1690557161833" duration="12634000" />
       <workItem from="1690626865648" duration="17566000" />
       <workItem from="1690892428548" duration="6033000" />
-      <workItem from="1690980675666" duration="17225000" />
+      <workItem from="1690980675666" duration="18251000" />
+      <workItem from="1691083268237" duration="112000" />
+      <workItem from="1691157803330" duration="3146000" />
+      <workItem from="1691235037884" duration="675000" />
+      <workItem from="1691239932885" duration="751000" />
+      <workItem from="1691249548033" duration="349000" />
+      <workItem from="1691249983422" duration="160000" />
+      <workItem from="1691254209062" duration="45000" />
+      <workItem from="1691254360879" duration="48000" />
+      <workItem from="1691254524528" duration="33000" />
+      <workItem from="1691254908364" duration="163000" />
+      <workItem from="1691255383457" duration="71000" />
+      <workItem from="1691255617619" duration="11000" />
+      <workItem from="1691255755081" duration="600000" />
+      <workItem from="1692378276289" duration="643000" />
+      <workItem from="1692627099693" duration="6403000" />
+      <workItem from="1692702204076" duration="3585000" />
+      <workItem from="1692712293471" duration="2401000" />
     </task>
     <servers />
   </component>

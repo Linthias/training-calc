@@ -17,18 +17,21 @@ public class CalculationHandler implements BaseHandler {
         if (calculationHandler == null) {
             calculationHandler = new CalculationHandler();
         }
+
         return calculationHandler;
     }
 
     @Override
-    public Quartet<String, BigDecimal, BigDecimal, Map<String, CalculationStrategy>>
-    process(Quartet<String, BigDecimal, BigDecimal, Map<String, CalculationStrategy>> state) {
+    public Quartet<String, BigDecimal[], String, Map<String, CalculationStrategy>>
+    handle(Quartet<String, BigDecimal[], String, Map<String, CalculationStrategy>> state) {
+
         String opLabel = state.getValue0();
-        BigDecimal argOne = state.getValue1();
-        BigDecimal argTwo = state.getValue2();
+        BigDecimal argOne = state.getValue1()[0];
+        BigDecimal argTwo = state.getValue1()[1];
         Map<String, CalculationStrategy> strategies = state.getValue3();
 
-        state = state.setAt1(strategies.get(opLabel).execute(argOne, argTwo));
+        BigDecimal[] result = {strategies.get(opLabel).execute(argOne, argTwo), argTwo};
+        state = state.setAt1(result);
 
         return state;
     }
